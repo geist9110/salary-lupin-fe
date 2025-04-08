@@ -1,3 +1,9 @@
+.homeContainer {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+}
+
 .heroSection {
   display: flex;
   flex-direction: row;
@@ -22,4 +28,17 @@
 
 .description > p {
   color: var(--color-neutral-400);
+}
+
+.cardSection {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  gap: var(--space-large);
+
+  justify-content: flex-start;
+  align-content: flex-start;
+
+  padding: 0 var(--layout-padding) var(--layout-padding);
+  background: var(--color-neutral-102);
 }
