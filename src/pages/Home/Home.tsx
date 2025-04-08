@@ -39,7 +39,7 @@ const cards = [
 
 function Home() {
   return (
-    <div>
+    <div className={styles.homeContainer}>
       <Header />
       <HeroSection />
       <CardSection />
