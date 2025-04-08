@@ -1,0 +1,12 @@
+:root {
+  /* 색상 */
+  --color-neutral-100: #FFFFFF;
+  --color-neutral-101: #F9F9F9;
+  --color-neutral-102: #F8F8F8;
+  --color-neutral-200: #F5F5F5;
+  --color-neutral-400: #A0A0A0;
+  --color-neutral-900: #121212;
+
+  /* 레이아웃 */
+  --layout-padding: 0 80px;
+}
