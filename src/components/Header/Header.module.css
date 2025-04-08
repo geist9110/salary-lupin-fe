@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background: var(--color-neutral-102);
+  padding: var(--layout-padding);
+  height: 80px;
+  border-bottom: 1px solid var(--color-neutral-400)
+}
+
+.logo {
+  height: 32px;
+}
