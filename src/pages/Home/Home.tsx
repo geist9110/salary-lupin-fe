@@ -3,6 +3,7 @@ import Card from '@/components/Card';
 import styles from './Home.module.css';
 import character from '@/assets/person-with-notebook-and-coffee.svg';
 import testImage from '@/assets/testImage.jpg';
+import Footer from '@/components/Footer';
 
 const cards = [
   {
@@ -43,6 +44,7 @@ function Home() {
       <Header />
       <HeroSection />
       <CardSection />
+      <Footer />
     </div>
   );
 }
