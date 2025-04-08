@@ -1,5 +1,6 @@
 import Header from '@/components/Header';
 import styles from './Home.module.css';
+import character from '@/assets/person-with-notebook-and-coffee.svg';
 
 function Home() {
   return (
@@ -22,7 +23,7 @@ function HeroSection() {
           <p>이건 일하는 척을 돕는 가장 진지한 플랫폼입니다.</p>
         </div>
       </div>
-      <div>이미지</div>
+      <img src={character} alt="character" />
     </div>
   );
 }
