@@ -40,7 +40,8 @@
   --space-xsmall: 8px;
   --space-small: 12px;
   --space-medium: 16px;
-  --space-large: 24px;
+  --space-large: 20px;
+  --space-xlarge: 24px;
 }
 
 html, body {
