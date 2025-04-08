@@ -8,7 +8,7 @@
   --color-neutral-900: #121212;
 
   /* 레이아웃 */
-  --layout-padding: 0 80px;
+  --layout-padding: 80px;
 
   /*텍스트 스타일 */
   --font-size-h1: 2.5rem; /* 40px */
@@ -35,6 +35,12 @@
   --line-height-caption: 1.5em;
   --font-weight-caption: 400;
   --letter-spacing-caption: 0;
+
+  /*간격*/
+  --space-xsmall: 8px;
+  --space-small: 12px;
+  --space-medium: 16px;
+  --space-large: 24px;
 }
 
 html, body {
