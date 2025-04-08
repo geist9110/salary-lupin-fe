@@ -23,3 +23,12 @@
 .description > p {
   color: var(--color-neutral-400);
 }
+
+.cardSection {
+  display: flex;
+  gap: var(--space-large);
+  flex-wrap: wrap;
+  background: var(--color-neutral-102);
+  height: auto;
+  padding: 0 var(--layout-padding) var(--layout-padding) var(--layout-padding);
+}
