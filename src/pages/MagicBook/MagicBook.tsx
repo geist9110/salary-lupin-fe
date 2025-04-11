@@ -1,5 +1,5 @@
 function MagicBook() {
-  return <div>MagicBook</div>;
+  return <div>Contents</div>;
 }
 
 export default MagicBook;

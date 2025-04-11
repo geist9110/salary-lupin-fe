@@ -1,9 +1,3 @@
-.homeContainer {
-  display: flex;
-  height: 100vh;
-  flex-direction: column;
-}
-
 .heroSection {
   display: flex;
   flex-direction: row;
