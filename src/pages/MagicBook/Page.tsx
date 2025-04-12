@@ -12,7 +12,7 @@ function Page({ front, back, page }: Readonly<PageProps>) {
       className={styles.page}
       onPointerDown={handlePointerDown}
       style={{
-        transform: `rotateY(${rotation}deg)`,
+        transform: `rotateY(-${rotation}deg)`,
         zIndex: zIndex,
       }}
     >

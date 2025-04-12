@@ -18,6 +18,8 @@
 
   width: 896px;
   height: 706px;
+
+  perspective: 4000px;
 }
 
 .bookSpine {
@@ -43,6 +45,7 @@
 
   transform-style: preserve-3d;
   transform-origin: left;
+
 }
 
 .pageFront,
