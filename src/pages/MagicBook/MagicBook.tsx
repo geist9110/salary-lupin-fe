@@ -26,22 +26,30 @@ type PageProps = {
 
 function Page({ front, back }: Readonly<PageProps>) {
   const [rotation, setRotation] = useState(0);
+
   const pageRef = useRef<HTMLDivElement>(null);
-  const startXRef = useRef<number | null>(null);
-  const originXRef = useRef<number | null>(null);
+  const pageLeftXRef = useRef<number | null>(null);
+  const pageRightXRef = useRef<number | null>(null);
+
   const isDraggingRef = useRef(false);
 
   const handlePointerDown = (e: React.PointerEvent) => {
-    startXRef.current = e.clientX;
-    originXRef.current = pageRef.current?.getBoundingClientRect().left ?? 0;
+    const ratio =
+      (e.clientX - pageLeftXRef.current!) / (pageRightXRef.current! - pageLeftXRef.current!);
+    const newRotation = (1 - ratio) * 180;
+
+    setRotation(Math.min(180, Math.max(0, newRotation)));
     isDraggingRef.current = true;
   };
 
   const handlePointerMove = useCallback((e: PointerEvent) => {
-    if (!isDraggingRef.current || originXRef.current === null) return;
-    const deltaX = originXRef.current - e.clientX;
-    const newRotation = Math.min(Math.max(0, deltaX / 2), 180);
-    setRotation(newRotation);
+    if (!isDraggingRef.current) return;
+
+    const ratio =
+      (e.clientX - pageLeftXRef.current!) / (pageRightXRef.current! - pageLeftXRef.current!);
+    const newRotation = (1 - ratio) * 180;
+
+    setRotation(Math.min(180, Math.max(0, newRotation)));
   }, []);
 
   const handlePointerUp = useCallback(() => {
@@ -52,7 +60,6 @@ function Page({ front, back }: Readonly<PageProps>) {
       setRotation(0);
     }
     isDraggingRef.current = false;
-    startXRef.current = null;
   }, [rotation]);
 
   useEffect(() => {
@@ -64,6 +71,15 @@ function Page({ front, back }: Readonly<PageProps>) {
       window.removeEventListener('pointerup', handlePointerUp);
     };
   }, [handlePointerMove, handlePointerUp]);
+
+  useEffect(() => {
+    if (pageRef.current) {
+      pageLeftXRef.current =
+        pageRef.current.getBoundingClientRect().left -
+        pageRef.current.getBoundingClientRect().width;
+      pageRightXRef.current = pageRef.current.getBoundingClientRect().right;
+    }
+  }, []);
 
   return (
     <div
