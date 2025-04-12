@@ -13,6 +13,12 @@ function MagicBook() {
         <Page
           front={<img src={BookCover} alt="book-cover" />}
           back={<img src={BookCoverBack} alt="book-cover-back" />}
+          page={1}
+        />
+        <Page
+          front={<div style={{ width: '100%', height: '100%', background: 'white' }}>FRONT</div>}
+          back={<div style={{ width: '100%', height: '100%', background: 'white' }}>BACK</div>}
+          page={2}
         />
       </div>
     </div>
@@ -22,10 +28,12 @@ function MagicBook() {
 type PageProps = {
   front: React.ReactNode;
   back: React.ReactNode;
+  page: number;
 };
 
-function Page({ front, back }: Readonly<PageProps>) {
+function Page({ front, back, page }: Readonly<PageProps>) {
   const [rotation, setRotation] = useState(0);
+  const [pageZIndex, setPageZIndex] = useState(100 - page);
 
   const pageRef = useRef<HTMLDivElement>(null);
   const pageLeftXRef = useRef<number | null>(null);
@@ -49,14 +57,23 @@ function Page({ front, back }: Readonly<PageProps>) {
       (e.clientX - pageLeftXRef.current!) / (pageRightXRef.current! - pageLeftXRef.current!);
     const newRotation = (1 - ratio) * 180;
 
+    if (newRotation > 90) {
+      setPageZIndex(100 + page);
+    }
+    if (newRotation <= 90) {
+      setPageZIndex(100 - page);
+    }
+
     setRotation(Math.min(180, Math.max(0, newRotation)));
   }, []);
 
   const handlePointerUp = useCallback(() => {
     if (!isDraggingRef.current) return;
     if (rotation > 90) {
+      setPageZIndex(100 + page);
       setRotation(180);
     } else {
+      setPageZIndex(100 - page);
       setRotation(0);
     }
     isDraggingRef.current = false;
@@ -88,14 +105,11 @@ function Page({ front, back }: Readonly<PageProps>) {
       onPointerDown={handlePointerDown}
       style={{
         transform: `rotateY(${rotation}deg)`,
+        zIndex: pageZIndex,
       }}
     >
-      <div draggable={false} className={styles.pageFront}>
-        {applyDraggableFalse(front)}
-      </div>
-      <div draggable={false} className={styles.pageBack}>
-        {applyDraggableFalse(back)}
-      </div>
+      <div className={styles.pageFront}>{applyDraggableFalse(front)}</div>
+      <div className={styles.pageBack}>{applyDraggableFalse(back)}</div>
     </div>
   );
 }
