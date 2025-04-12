@@ -10,6 +10,24 @@
 }
 
 .book {
+  --book-width: 448px;
+  --book-height: 706px;
+  --book-spine-width: 10px;
+
+  position: relative;
+
+  width: var(--book-width) + var(--book-spine-width);
+  height: var(--book-height);
+
   display: flex;
   flex-direction: row;
+}
+
+.page {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.pageBack {
+  display: none;
 }
