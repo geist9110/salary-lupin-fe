@@ -54,12 +54,12 @@ function MagicBook() {
             transform: `rotateY(${rotation}deg)`,
           }}
         >
-          <img src={BookCover} alt="book-cover" draggable={false} />
+          <img src={BookCover} alt="book-cover" draggable={false} className={styles.pageFront} />
           <img
             src={BookCoverBack}
             alt="book-cover-back"
-            className={styles.pageBack}
             draggable={false}
+            className={styles.pageBack}
           />
         </div>
       </div>
