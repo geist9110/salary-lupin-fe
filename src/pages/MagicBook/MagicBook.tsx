@@ -16,7 +16,7 @@ function MagicBook() {
 
   const handlePointerMove = (e: PointerEvent) => {
     if (!isDraggingRef.current || startXRef.current === null) return;
-    const deltaX = e.clientX - startXRef.current;
+    const deltaX = startXRef.current - e.clientX;
     const newRotation = Math.min(Math.max(0, deltaX / 2), 180);
     setRotation(newRotation);
   };
