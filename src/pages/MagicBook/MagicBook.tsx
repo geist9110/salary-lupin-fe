@@ -46,7 +46,7 @@ function MagicBook() {
   return (
     <div className={styles.container}>
       <div className={styles.book}>
-        <img src={BookSpine} alt="book-spine" draggable={false} />
+        <img src={BookSpine} alt="book-spine" draggable={false} className={styles.bookSpine} />
         <div
           className={styles.page}
           onPointerDown={handlePointerDown}
