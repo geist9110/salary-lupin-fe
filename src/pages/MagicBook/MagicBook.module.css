@@ -1,4 +1,8 @@
 .container {
+  --book-width: 448px;
+  --book-height: 706px;
+  --book-spine-width: 10px;
+
   background: var(--color-neutral-102);
   width: 100%;
   height: 100%;
@@ -10,24 +14,19 @@
 }
 
 .book {
-  --book-width: 448px;
-  --book-height: 706px;
-  --book-spine-width: 10px;
-
   position: relative;
 
-  width: 896px;
-  height: 706px;
+  width: calc(var(--book-width) * 2);
+  height: var(--book-height);
 
   perspective: 4000px;
 }
 
 .bookSpine {
   position: absolute;
-  left: 448px;
-  top: 0;
-  width: 10px;
-  height: 706px;
+  left: var(--book-width);
+  width: var(--book-spine-width);
+  height: var(--book-height);
 
   user-select: none;
   -webkit-user-select: none;
@@ -39,9 +38,9 @@
 
   position: absolute;
   top: 0;
-  left: 458px;
-  width: 448px;
-  height: 706px;
+  left: calc(var(--book-width) + var(--book-spine-width));
+  width: var(--book-width);
+  height: var(--book-height);
 
   transform-style: preserve-3d;
   transform-origin: left;
