@@ -4,7 +4,7 @@ import { PageProps } from './types.ts';
 import { usePageFlip } from '@/pages/MagicBook/usePageFlip.ts';
 
 function Page({ front, back, page }: Readonly<PageProps>) {
-  const { pageRef, rotation, zIndex, handlePointerDown } = usePageFlip(page);
+  const { pageRef, rotation, zIndex, handlePointerDown, isAnimating } = usePageFlip(page);
 
   return (
     <div
@@ -14,6 +14,7 @@ function Page({ front, back, page }: Readonly<PageProps>) {
       style={{
         transform: `rotateY(-${rotation}deg)`,
         zIndex: zIndex,
+        transition: isAnimating ? 'transform 0.3s ease-in-out' : 'none',
       }}
     >
       <div className={styles.pageFront}>{applyDraggableFalse(front)}</div>

@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 
 export function usePageFlip(pageIndex: number) {
   const [rotation, setRotation] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
   const [zIndex, setZIndex] = useState(100 - pageIndex);
   const pageRef = useRef<HTMLDivElement>(null);
   const isDragging = useRef(false);
@@ -21,12 +22,13 @@ export function usePageFlip(pageIndex: number) {
     const ratio = (e.clientX - pageLeftX.current!) / (pageRightX.current! - pageLeftX.current!);
     setRotation(Math.min(180, Math.max(0, (1 - ratio) * 180)));
     isDragging.current = true;
+    setIsAnimating(true);
   };
 
   const handlePointerMove = useCallback(
     (e: PointerEvent) => {
       if (!isDragging.current) return;
-
+      setIsAnimating(false);
       const ratio = (e.clientX - pageLeftX.current!) / (pageRightX.current! - pageLeftX.current!);
       const newRotation = (1 - ratio) * 180;
 
@@ -44,6 +46,7 @@ export function usePageFlip(pageIndex: number) {
       return final;
     });
     isDragging.current = false;
+    setIsAnimating(true);
   }, [pageIndex]);
 
   useEffect(() => {
@@ -55,5 +58,5 @@ export function usePageFlip(pageIndex: number) {
     };
   }, [handlePointerMove, handlePointerUp]);
 
-  return { pageRef, rotation, zIndex, handlePointerDown };
+  return { pageRef, rotation, zIndex, handlePointerDown, isAnimating };
 }
