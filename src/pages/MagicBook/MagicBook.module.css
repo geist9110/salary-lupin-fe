@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'SeoulHangangM';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/SeoulHangangM.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .container {
   --book-width: 448px;
   --book-height: 706px;
@@ -18,6 +25,10 @@
 
   width: calc(var(--book-width) * 2);
   height: var(--book-height);
+
+  font-family: 'SeoulHangangM', 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui,
+  Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic",
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 
   perspective: 4000px;
 }
@@ -53,10 +64,6 @@
   height: 100%;
   backface-visibility: hidden;
   -webkit-user-drag: none;
-}
-
-.pageFront {
-  z-index: 2;
 }
 
 .pageBack {
