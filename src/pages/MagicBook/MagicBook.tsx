@@ -66,8 +66,20 @@ function MagicBook() {
           page={2}
         />
         <Page
-          front={<div style={{ width: '100%', height: '100%', background: 'white' }}>FRONT</div>}
-          back={<div style={{ width: '100%', height: '100%', background: 'white' }}>BACK</div>}
+          front={
+            <div
+              className={styles.pageForeground}
+              style={{
+                background: 'white',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <h2>아무것도 하지마라.</h2>
+            </div>
+          }
+          back={<div className={styles.pageForeground} style={{ background: 'white' }}></div>}
           page={3}
         />
         <Page
