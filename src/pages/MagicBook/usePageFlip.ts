@@ -19,8 +19,7 @@ export function usePageFlip(pageIndex: number) {
   }, []);
 
   const handlePointerDown = (e: React.PointerEvent) => {
-    const ratio = (e.clientX - pageLeftX.current!) / (pageRightX.current! - pageLeftX.current!);
-    setRotation(Math.min(180, Math.max(0, (1 - ratio) * 180)));
+    setRotation(getRotation(e.clientX, pageLeftX.current!, pageRightX.current!));
     isDragging.current = true;
     setIsAnimating(true);
   };
@@ -29,11 +28,9 @@ export function usePageFlip(pageIndex: number) {
     (e: PointerEvent) => {
       if (!isDragging.current) return;
       setIsAnimating(false);
-      const ratio = (e.clientX - pageLeftX.current!) / (pageRightX.current! - pageLeftX.current!);
-      const newRotation = (1 - ratio) * 180;
-
+      const newRotation = getRotation(e.clientX, pageLeftX.current!, pageRightX.current!);
       setZIndex(newRotation > 90 ? 100 + pageIndex : 100 - pageIndex);
-      setRotation(Math.min(180, Math.max(0, newRotation)));
+      setRotation(newRotation);
     },
     [pageIndex]
   );
@@ -59,4 +56,9 @@ export function usePageFlip(pageIndex: number) {
   }, [handlePointerMove, handlePointerUp]);
 
   return { pageRef, rotation, zIndex, handlePointerDown, isAnimating };
+}
+
+function getRotation(x: number, leftSide: number, rightSide: number): number {
+  const ratio = (x - leftSide) / (rightSide - leftSide);
+  return Math.min(180, Math.max(0, (1 - ratio) * 180));
 }
