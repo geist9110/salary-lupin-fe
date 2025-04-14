@@ -1,9 +1,7 @@
-import Header from '@/components/Header';
 import Card from '@/components/Card';
 import styles from './Home.module.css';
 import character from '@/assets/person-with-notebook-and-coffee.svg';
 import testImage from '@/assets/testImage.jpg';
-import Footer from '@/components/Footer';
 
 const cards = [
   {
@@ -40,11 +38,9 @@ const cards = [
 
 function Home() {
   return (
-    <div className={styles.homeContainer}>
-      <Header />
+    <div className={styles.container}>
       <HeroSection />
       <CardSection />
-      <Footer />
     </div>
   );
 }

@@ -1,0 +1,147 @@
+@font-face {
+  font-family: 'SeoulHangangM';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/SeoulHangangM.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.container {
+  --book-width: 448px;
+  --book-height: 706px;
+  --book-spine-width: 10px;
+  --color-gold: #DCA538;
+
+  background: var(--color-neutral-102);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex: 1;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.book {
+  position: relative;
+
+  width: calc(var(--book-width) * 2);
+  height: var(--book-height);
+
+  font-family: 'SeoulHangangM', 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui,
+  Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic",
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+
+  perspective: 4000px;
+}
+
+.bookSpine {
+  position: absolute;
+  left: var(--book-width);
+  width: var(--book-spine-width);
+  height: var(--book-height);
+
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.page {
+  user-select: none;
+  -webkit-user-select: none;
+
+  position: absolute;
+  top: 0;
+  left: calc(var(--book-width) + var(--book-spine-width));
+  width: var(--book-width);
+  height: var(--book-height);
+
+  transform-style: preserve-3d;
+  transform-origin: left;
+}
+
+.pageFront,
+.pageBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-user-drag: none;
+}
+
+.pageBack {
+  transform: rotateY(180deg);
+}
+
+.pageContents {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.pageBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  -webkit-user-drag: none;
+}
+
+.pageForeground {
+  position: absolute;
+  padding: 100px var(--layout-padding);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.pageForeground > p {
+  color: inherit;
+}
+
+.title {
+  color: inherit;
+  font-weight: normal;
+  text-align: center;
+}
+
+.description {
+  margin-top: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xlarge);
+}
+
+.description > p {
+  color: inherit;
+  text-align: center;
+}
+
+.worryInput {
+  margin-top: 64px;
+  border: 0;
+  width: 100%;
+  height: 250px;
+  resize: none;
+  font-size: var(--font-size-body);
+  line-height: calc(var(--space-xlarge) + var(--font-size-body) + 1px);
+  background: transparent repeating-linear-gradient(
+      to bottom,
+      transparent,
+      transparent calc(calc(var(--space-xlarge) + var(--font-size-body)) - 1px),
+      var(--color-neutral-400) calc(calc(var(--space-xlarge) + var(--font-size-body)) - 1px),
+      var(--color-neutral-400) calc(var(--space-xlarge) + var(--font-size-body))
+  );
+
+  padding: 0;
+}
+
+.worryInput::placeholder {
+  color: var(--color-neutral-400);
+}
+
+.worryInput:focus {
+  outline: none;
+  box-shadow: none;
+}
