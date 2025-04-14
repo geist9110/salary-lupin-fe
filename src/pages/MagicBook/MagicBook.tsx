@@ -32,7 +32,17 @@ function MagicBook() {
         <Page
           front={
             <div className={styles.pageContents}>
-              <div className={styles.pageBackground}></div>
+              <div
+                className={styles.pageForeground}
+                style={{ background: 'var(--color-neutral-100)' }}
+              >
+                <h2 className={styles.title}>무엇이 고민인가요?</h2>
+                <textarea
+                  className={styles.worryInput}
+                  maxLength={100}
+                  placeholder={'아무말이나 괜찮아요...'}
+                />
+              </div>
             </div>
           }
           back={<div style={{ width: '100%', height: '100%', background: 'white' }}>BACK</div>}
