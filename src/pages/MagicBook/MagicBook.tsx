@@ -3,8 +3,11 @@ import BookCoverBack from '@/assets/book-cover-back.svg';
 import BookSpine from '@/assets/book-spine.svg';
 import styles from './MagicBook.module.css';
 import Page from './Page.tsx';
+import { useState } from 'react';
 
 function MagicBook() {
+  const [worryText, setWorryText] = useState('');
+
   return (
     <div className={styles.container}>
       <div className={styles.book}>
@@ -40,12 +43,26 @@ function MagicBook() {
                 <textarea
                   className={styles.worryInput}
                   maxLength={100}
+                  onChange={(e) => setWorryText(e.target.value)}
                   placeholder={'아무말이나 괜찮아요...'}
                 />
               </div>
             </div>
           }
-          back={<div style={{ width: '100%', height: '100%', background: 'white' }}>BACK</div>}
+          back={
+            <div
+              className={styles.pageForeground}
+              style={{
+                background: 'var(--color-neutral-100)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                whiteSpace: 'pre-wrap',
+              }}
+            >
+              {worryText}
+            </div>
+          }
           page={2}
         />
         <Page
