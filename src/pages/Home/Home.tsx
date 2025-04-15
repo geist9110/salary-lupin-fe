@@ -1,18 +1,7 @@
 import Card from '@/components/Card';
 import styles from './Home.module.css';
 import character from '@/assets/common/person-with-notebook-and-coffee.svg';
-import magicBookThumbnail from '@/assets/magic-book/magin-book-thumbnail.png';
-import CardProps from '@/types/card.ts';
-
-const cards: CardProps[] = [
-  {
-    id: 'contents-001',
-    thumbnail: magicBookThumbnail,
-    title: '마법의 고민 해결 책',
-    description: '고민을 적어주세요.\n정답은 없지만 반응은 있습니다.',
-    link: '/magic-book',
-  },
-];
+import { cards } from './data.ts';
 
 function Home() {
   return (
