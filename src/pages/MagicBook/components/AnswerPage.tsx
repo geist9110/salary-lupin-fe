@@ -18,10 +18,16 @@ function AnswerPage({ index }: Readonly<PageIndex>) {
           {answer}
         </h2>
       </div>
+      <div className={`${common.absoluteFill} ${styles.rightPageShadow}`}></div>
     </div>
   );
 
-  const back = <EmptyBackground />;
+  const back = (
+    <div className={styles.pageContents}>
+      <EmptyBackground />
+      <div className={`${common.absoluteFill} ${styles.leftPageShadow}`}></div>
+    </div>
+  );
 
   return <Page front={front} back={back} page={index} />;
 }

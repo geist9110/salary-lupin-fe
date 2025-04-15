@@ -114,3 +114,11 @@
   outline: none;
   box-shadow: none;
 }
+
+.leftPageShadow {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset -10px 0px 4px rgba(0, 0, 0, 0.1), inset -6px 0px 4px rgba(0, 0, 0, 0.2);
+}
+
+.rightPageShadow {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 12px 0px 4px rgba(0, 0, 0, 0.1), inset 6px 0px 4px rgba(0, 0, 0, 0.2);
+}

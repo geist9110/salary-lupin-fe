@@ -12,6 +12,7 @@ function WorryPage({ index }: Readonly<PageIndex>) {
   const front = (
     <div className={styles.pageContents}>
       <EmptyBackground />
+      <div className={`${common.absoluteFill} ${styles.rightPageShadow}`}></div>
       <div className={`${styles.pageForeground} ${common.absoluteFill} ${common.selectNone}`}>
         <h2 className={styles.title}>무엇이 고민인가요?</h2>
         <textarea
@@ -32,6 +33,7 @@ function WorryPage({ index }: Readonly<PageIndex>) {
           {worryText}
         </div>
       </div>
+      <div className={`${common.absoluteFill} ${styles.leftPageShadow}`}></div>
     </div>
   );
 

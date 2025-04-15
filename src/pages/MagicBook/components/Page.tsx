@@ -23,6 +23,7 @@ function Page({ front, back, page }: Readonly<PageProps>) {
       <div className={`${styles.pageFront} ${common.absoluteFill} ${common.selectNone}`}>
         {applyDraggableFalse(front)}
       </div>
+
       <div className={`${styles.pageBack} ${common.absoluteFill} ${common.selectNone}`}>
         {applyDraggableFalse(back)}
       </div>
