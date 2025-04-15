@@ -1,5 +1,5 @@
 import styles from '@/pages/MagicBook/MagicBook.module.css';
-import Page from '@/pages/MagicBook/Page.tsx';
+import Page from '@/pages/MagicBook/components/Page.tsx';
 import { useState } from 'react';
 import { PageIndex } from '@/pages/MagicBook/types.ts';
 

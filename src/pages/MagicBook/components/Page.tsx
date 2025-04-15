@@ -1,6 +1,6 @@
 import styles from '@/pages/MagicBook/MagicBook.module.css';
 import applyDraggableFalse from '@/utils/applyDraggableFalse.ts';
-import { PageProps } from './types.ts';
+import { PageProps } from '../types.ts';
 import { usePageFlip } from '@/pages/MagicBook/usePageFlip.ts';
 
 function Page({ front, back, page }: Readonly<PageProps>) {

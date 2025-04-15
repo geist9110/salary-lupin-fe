@@ -1,5 +1,5 @@
 import BookCoverBack from '@/assets/magic-book/book-cover-back.svg';
-import Page from '@/pages/MagicBook/Page.tsx';
+import Page from '@/pages/MagicBook/components/Page.tsx';
 import { PageIndex } from '@/pages/MagicBook/types.ts';
 
 function BackCoverPage({ index }: Readonly<PageIndex>) {
