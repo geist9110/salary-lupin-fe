@@ -3,6 +3,7 @@ import styles from '@/pages/MagicBook/MagicBook.module.css';
 import BookCoverBack from '@/assets/magic-book/book-cover-back.svg';
 import Page from '@/pages/MagicBook/components/Page.tsx';
 import { PageIndex } from '@/pages/MagicBook/types.ts';
+import common from '@/pages/MagicBook/common.module.css';
 
 function CoverPage({ index }: Readonly<PageIndex>) {
   const descriptions = [
@@ -18,8 +19,14 @@ function CoverPage({ index }: Readonly<PageIndex>) {
 
   const back = (
     <div className={styles.pageContents}>
-      <img src={BookCoverBack} alt="book-cover-back" className={styles.pageBackground} />
-      <div className={`${styles.pageForeground} ${styles.textColorGold}`}>
+      <img
+        src={BookCoverBack}
+        alt="book-cover-back"
+        className={`${common.absoluteFill} ${common.selectNone}`}
+      />
+      <div
+        className={`${styles.pageForeground} ${styles.textColorGold} ${common.absoluteFill} ${common.selectNone}`}
+      >
         <h2 className={styles.title}>마법의 고민해결 책</h2>
         <div className={styles.description}>
           {descriptions.map((line) => (

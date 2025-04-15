@@ -12,13 +12,7 @@
   --color-gold: #DCA538;
 
   background: var(--color-neutral-102);
-  width: 100%;
-  height: 100%;
-  display: flex;
   flex: 1;
-
-  justify-content: center;
-  align-items: center;
 }
 
 .book {
@@ -39,15 +33,9 @@
   left: var(--book-width);
   width: var(--book-spine-width);
   height: var(--book-height);
-
-  user-select: none;
-  -webkit-user-select: none;
 }
 
 .page {
-  user-select: none;
-  -webkit-user-select: none;
-
   position: absolute;
   top: 0;
   left: calc(var(--book-width) + var(--book-spine-width));
@@ -60,11 +48,7 @@
 
 .pageFront,
 .pageBack {
-  position: absolute;
-  width: 100%;
-  height: 100%;
   backface-visibility: hidden;
-  -webkit-user-drag: none;
 }
 
 .pageBack {
@@ -77,23 +61,8 @@
   height: 100%;
 }
 
-.pageBackground {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-
-  -webkit-user-drag: none;
-}
-
 .pageForeground {
-  position: absolute;
   padding: 100px var(--layout-padding);
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
 }
 
 .pageForeground > p {
@@ -150,21 +119,14 @@
   color: var(--color-gold);
 }
 
-.emptyPage {
-  width: 100%;
-  height: 100%;
+.neutralBackground {
   background: var(--color-neutral-100);
 }
 
-.centerText {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.wrapText {
   white-space: pre-wrap;
 }
 
-.answer {
+.defaultTextWeight {
   font-weight: 500;
 }

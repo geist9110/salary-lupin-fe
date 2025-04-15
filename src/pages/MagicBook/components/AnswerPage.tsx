@@ -1,4 +1,5 @@
 import styles from '@/pages/MagicBook/MagicBook.module.css';
+import common from '@/pages/MagicBook/common.module.css';
 import Page from '@/pages/MagicBook/components/Page.tsx';
 import { PageIndex } from '@/pages/MagicBook/types.ts';
 import EmptyBackground from '@/pages/MagicBook/components/EmptyBackground.tsx';
@@ -10,8 +11,12 @@ function AnswerPage({ index }: Readonly<PageIndex>) {
   const front = (
     <div className={styles.pageContents}>
       <EmptyBackground />
-      <div className={styles.pageForeground}>
-        <h2 className={`${styles.centerText} ${styles.answer}`}>{answer}</h2>
+      <div className={`${styles.pageForeground} ${common.absoluteFill} ${common.selectNone}`}>
+        <h2
+          className={`${styles.wrapText} ${styles.defaultTextWeight} ${common.flexCenter} ${common.fullSize}`}
+        >
+          {answer}
+        </h2>
       </div>
     </div>
   );
