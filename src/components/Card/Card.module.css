@@ -13,6 +13,8 @@
   border-radius: var(--card-radius);
   overflow: hidden;
   transition: var(--card-transition);
+
+  text-decoration: none;
 }
 
 .cardContainer:hover {
@@ -34,4 +36,5 @@
 .description {
   margin-top: var(--space-small);
   color: var(--color-neutral-400);
+  white-space: pre-line;
 }
