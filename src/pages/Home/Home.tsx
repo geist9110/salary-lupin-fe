@@ -2,8 +2,9 @@ import Card from '@/components/Card';
 import styles from './Home.module.css';
 import character from '@/assets/person-with-notebook-and-coffee.svg';
 import testImage from '@/assets/testImage.jpg';
+import CardProps from '@/types/card.ts';
 
-const cards = [
+const cards: CardProps[] = [
   {
     id: 'contents-001',
     thumbnail: testImage,

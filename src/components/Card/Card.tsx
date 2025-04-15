@@ -1,12 +1,6 @@
 import styles from './Card.module.css';
 import { Link } from 'react-router-dom';
-
-interface CardProps {
-  thumbnail: string;
-  title: string;
-  description: string;
-  link: string;
-}
+import CardProps from '@/types/card.ts';
 
 function Card({ thumbnail, title, description, link }: Readonly<CardProps>) {
   return (
