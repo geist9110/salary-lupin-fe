@@ -27,7 +27,7 @@ function WorryPage({ index }: Readonly<PageIndex>) {
     <div className={styles.pageContents}>
       <EmptyBackground />
       <div className={styles.pageForeground}>
-        <div className={styles.worry}>{worryText}</div>
+        <div className={styles.centerText}>{worryText}</div>
       </div>
     </div>
   );
