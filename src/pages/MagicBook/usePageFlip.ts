@@ -55,7 +55,7 @@ export function usePageFlip(pageIndex: number) {
     };
   }, [handlePointerMove, handlePointerUp]);
 
-  return { pageRef, rotation, zIndex, handlePointerDown, isAnimating };
+  return { pageRef, degree: rotation, zIndex, handlePointerDown, isAnimating };
 }
 
 function getRotation(x: number, leftSide: number, rightSide: number): number {
