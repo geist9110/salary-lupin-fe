@@ -5,3 +5,7 @@ export type PageProps = {
   back: React.ReactNode;
   page: number;
 };
+
+export type PageIndex = {
+  index: number;
+};
