@@ -1,7 +1,7 @@
 import Card from '@/components/Card';
 import styles from './Home.module.css';
-import character from '@/assets/person-with-notebook-and-coffee.svg';
-import magicBookThumbnail from '@/assets/magin-book-thumbnail.png';
+import character from '@/assets/common/person-with-notebook-and-coffee.svg';
+import magicBookThumbnail from '@/assets/magic-book/magin-book-thumbnail.png';
 import CardProps from '@/types/card.ts';
 
 const cards: CardProps[] = [

@@ -1,6 +1,6 @@
-import BookCover from '@/assets/book-cover.svg';
-import BookCoverBack from '@/assets/book-cover-back.svg';
-import BookSpine from '@/assets/book-spine.svg';
+import BookCover from '@/assets/magic-book/book-cover.svg';
+import BookCoverBack from '@/assets/magic-book/book-cover-back.svg';
+import BookSpine from '@/assets/magic-book/book-spine.svg';
 import styles from './MagicBook.module.css';
 import Page from './Page.tsx';
 import { useState } from 'react';
