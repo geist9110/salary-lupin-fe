@@ -6,7 +6,7 @@ function Header() {
   return (
     <header className={styles.header}>
       <Link to={'/'}>
-        <img className={styles.logo} src={logo} alt="logo" />
+        <img className={styles.logo} src={logo} alt="월급 루팡 로고" />
       </Link>
     </header>
   );
