@@ -2,8 +2,9 @@ import BookCover from '@/assets/magic-book/book-cover.svg';
 import styles from '@/pages/MagicBook/MagicBook.module.css';
 import BookCoverBack from '@/assets/magic-book/book-cover-back.svg';
 import Page from '@/pages/MagicBook/Page.tsx';
+import { PageIndex } from '@/pages/MagicBook/types.ts';
 
-function CoverPage() {
+function CoverPage({ index }: Readonly<PageIndex>) {
   return (
     <Page
       front={<img src={BookCover} alt="book-cover" />}
@@ -23,7 +24,7 @@ function CoverPage() {
           </div>
         </div>
       }
-      page={1}
+      page={index}
     />
   );
 }

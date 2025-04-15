@@ -10,10 +10,10 @@ function MagicBook() {
     <div className={styles.container}>
       <div className={styles.book}>
         <img src={BookSpine} alt="book-spine" draggable={false} className={styles.bookSpine} />
-        <CoverPage />
-        <WorryPage />
-        <AnswerPage />
-        <BackCoverPage />
+        <CoverPage index={1} />
+        <WorryPage index={2} />
+        <AnswerPage index={3} />
+        <BackCoverPage index={4} />
       </div>
     </div>
   );

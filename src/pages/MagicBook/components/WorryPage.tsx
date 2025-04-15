@@ -1,8 +1,9 @@
 import styles from '@/pages/MagicBook/MagicBook.module.css';
 import Page from '@/pages/MagicBook/Page.tsx';
 import { useState } from 'react';
+import { PageIndex } from '@/pages/MagicBook/types.ts';
 
-function WorryPage() {
+function WorryPage({ index }: Readonly<PageIndex>) {
   const [worryText, setWorryText] = useState('');
 
   return (
@@ -34,7 +35,7 @@ function WorryPage() {
           {worryText}
         </div>
       }
-      page={2}
+      page={index}
     />
   );
 }

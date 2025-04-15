@@ -1,7 +1,8 @@
 import styles from '@/pages/MagicBook/MagicBook.module.css';
 import Page from '@/pages/MagicBook/Page.tsx';
+import { PageIndex } from '@/pages/MagicBook/types.ts';
 
-function AnswerPage() {
+function AnswerPage({ index }: Readonly<PageIndex>) {
   return (
     <Page
       front={
@@ -18,7 +19,7 @@ function AnswerPage() {
         </div>
       }
       back={<div className={styles.pageForeground} style={{ background: 'white' }}></div>}
-      page={3}
+      page={index}
     />
   );
 }
