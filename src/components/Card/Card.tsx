@@ -1,20 +1,22 @@
 import styles from './Card.module.css';
+import { Link } from 'react-router-dom';
 
 interface CardProps {
   thumbnail: string;
   title: string;
   description: string;
+  link: string;
 }
 
-function Card({ thumbnail, title, description }: Readonly<CardProps>) {
+function Card({ thumbnail, title, description, link }: Readonly<CardProps>) {
   return (
-    <div className={styles.cardContainer}>
+    <Link className={styles.cardContainer} to={link}>
       <img className={styles.image} src={thumbnail} alt="thumbnail" />
       <div className={styles.textContainer}>
         <h3>{title}</h3>
         <p className={styles.description}>{description}</p>
       </div>
-    </div>
+    </Link>
   );
 }
 
