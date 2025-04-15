@@ -28,7 +28,7 @@ function WorryPage({ index }: Readonly<PageIndex>) {
     <div className={styles.pageContents}>
       <EmptyBackground />
       <div className={`${styles.pageForeground} ${common.absoluteFill} ${common.selectNone}`}>
-        <div className={`${styles.wrapText} ${common.fullSize} ${common.flexCenter}`}>
+        <div className={`${common.wrapText} ${common.fullSize} ${common.flexCenter}`}>
           {worryText}
         </div>
       </div>

@@ -21,3 +21,19 @@
   width: 100%;
   height: 100%;
 }
+
+.textColorGold {
+  color: var(--color-gold);
+}
+
+.neutralBackground {
+  background: var(--color-neutral-100);
+}
+
+.wrapText {
+  white-space: pre-wrap;
+}
+
+.defaultTextWeight {
+  font-weight: 500;
+}

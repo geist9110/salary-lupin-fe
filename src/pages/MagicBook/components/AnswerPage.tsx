@@ -13,7 +13,7 @@ function AnswerPage({ index }: Readonly<PageIndex>) {
       <EmptyBackground />
       <div className={`${styles.pageForeground} ${common.absoluteFill} ${common.selectNone}`}>
         <h2
-          className={`${styles.wrapText} ${styles.defaultTextWeight} ${common.flexCenter} ${common.fullSize}`}
+          className={`${common.wrapText} ${common.defaultTextWeight} ${common.flexCenter} ${common.fullSize}`}
         >
           {answer}
         </h2>

@@ -25,7 +25,7 @@ function CoverPage({ index }: Readonly<PageIndex>) {
         className={`${common.absoluteFill} ${common.selectNone}`}
       />
       <div
-        className={`${styles.pageForeground} ${styles.textColorGold} ${common.absoluteFill} ${common.selectNone}`}
+        className={`${styles.pageForeground} ${common.textColorGold} ${common.absoluteFill} ${common.selectNone}`}
       >
         <h2 className={styles.title}>마법의 고민해결 책</h2>
         <div className={styles.description}>
