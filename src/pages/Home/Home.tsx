@@ -1,40 +1,7 @@
 import Card from '@/components/Card';
 import styles from './Home.module.css';
-import character from '@/assets/person-with-notebook-and-coffee.svg';
-import testImage from '@/assets/testImage.jpg';
-
-const cards = [
-  {
-    id: 'contents-001',
-    thumbnail: testImage,
-    title: '일하는 척',
-    description: '일하는 척이 하고 싶으신가요?',
-  },
-  {
-    id: 'contents-002',
-    thumbnail: testImage,
-    title: '마법의 고민 해결 책',
-    description: '고민을 해결해주는 책',
-  },
-  {
-    id: 'contents-003',
-    thumbnail: testImage,
-    title: '샌드위치 휴가 추천',
-    description: '연가를 사용하기 적합한 날짜 추천',
-  },
-  {
-    id: 'contents-004',
-    thumbnail: testImage,
-    title: '고해성사',
-    description: '여러분들의 잘못을 들어 드립니다.',
-  },
-  {
-    id: 'contents-005',
-    thumbnail: testImage,
-    title: '월급루팡 인증서',
-    description: '당신의 월급 루팡을 인증해드립니다.',
-  },
-];
+import character from '@/assets/common/person-with-notebook-and-coffee.svg';
+import { cards } from './data.ts';
 
 function Home() {
   return (
