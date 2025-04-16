@@ -44,7 +44,7 @@ export function usePageFlip(
       const final = prev > 90 ? 180 : 0;
       setZIndex(final === 180 ? 100 + pageIndex : 100 - pageIndex);
       setTimeout(() => {
-        setVisible(final === 180 ? pageIndex + 1 : pageIndex - 1);
+        setVisible(final === 180 ? pageIndex + 1 : pageIndex);
       }, 0);
       return final;
     });
