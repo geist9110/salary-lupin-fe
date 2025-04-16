@@ -4,8 +4,8 @@ import { PageProps } from '../types.ts';
 import { usePageFlip } from '@/pages/MagicBook/usePageFlip.ts';
 import common from '@/pages/MagicBook/common.module.css';
 
-function Page({ front, back, page }: Readonly<PageProps>) {
-  const { pageRef, degree, zIndex, handlePointerDown, isAnimating } = usePageFlip(page);
+function Page({ front, back, page, setVisible }: Readonly<PageProps>) {
+  const { pageRef, degree, zIndex, handlePointerDown, isAnimating } = usePageFlip(page, setVisible);
 
   const pageStyle = {
     transform: `rotateY(-${degree}deg)`,

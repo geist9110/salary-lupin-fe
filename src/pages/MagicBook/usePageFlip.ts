@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 
-export function usePageFlip(pageIndex: number) {
+export function usePageFlip(pageIndex: number, setVisible: () => void) {
   const [rotation, setRotation] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [zIndex, setZIndex] = useState(100 - pageIndex);
@@ -40,6 +40,11 @@ export function usePageFlip(pageIndex: number) {
     setRotation((prev) => {
       const final = prev > 90 ? 180 : 0;
       setZIndex(final === 180 ? 100 + pageIndex : 100 - pageIndex);
+      if (final === 180) {
+        setTimeout(() => {
+          setVisible();
+        }, 0);
+      }
       return final;
     });
     isDragging.current = false;

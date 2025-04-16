@@ -5,7 +5,7 @@ import Page from '@/pages/MagicBook/components/Page.tsx';
 import { PageIndex } from '@/pages/MagicBook/types.ts';
 import common from '@/pages/MagicBook/common.module.css';
 
-function CoverPage({ index }: Readonly<PageIndex>) {
+function CoverPage({ index, setVisible }: Readonly<PageIndex>) {
   const descriptions = [
     '당신의 고민을 대신하지 않지만,',
     '대신 아무 말이나 해줄 수는 있습니다.',
@@ -37,7 +37,7 @@ function CoverPage({ index }: Readonly<PageIndex>) {
     </div>
   );
 
-  return <Page front={front} back={back} page={index} />;
+  return <Page front={front} back={back} page={index} setVisible={setVisible} />;
 }
 
 export default CoverPage;
