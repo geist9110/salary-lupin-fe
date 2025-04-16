@@ -13,7 +13,7 @@ function AnswerPage({ index, visiblePage, setVisible }: Readonly<PageIndex>) {
       <EmptyBackground />
       <div className={`${styles.pageForeground} ${common.absoluteFill} ${common.selectNone}`}>
         <h2
-          className={`${common.wrapText} ${common.defaultTextWeight} ${common.flexCenter} ${common.fullSize} ${visiblePage === 2 ? styles.fadeIn : common.hidden}`}
+          className={`${common.wrapText} ${common.defaultTextWeight} ${common.flexCenter} ${common.fullSize} ${visiblePage === index ? styles.fadeIn : common.hidden}`}
         >
           {answer}
         </h2>

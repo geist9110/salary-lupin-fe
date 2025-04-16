@@ -19,34 +19,10 @@ function MagicBook() {
           draggable={false}
           className={`${styles.bookSpine} ${common.selectNone}`}
         />
-        <CoverPage
-          index={1}
-          visiblePage={visiblePage}
-          setVisible={() => {
-            setVisiblePage(1);
-          }}
-        />
-        <WorryPage
-          index={2}
-          visiblePage={visiblePage}
-          setVisible={() => {
-            setVisiblePage(2);
-          }}
-        />
-        <AnswerPage
-          index={3}
-          visiblePage={visiblePage}
-          setVisible={() => {
-            setVisiblePage(3);
-          }}
-        />
-        <BackCoverPage
-          index={4}
-          visiblePage={visiblePage}
-          setVisible={() => {
-            setVisiblePage(4);
-          }}
-        />
+        <CoverPage index={1} visiblePage={visiblePage} setVisible={setVisiblePage} />
+        <WorryPage index={2} visiblePage={visiblePage} setVisible={setVisiblePage} />
+        <AnswerPage index={3} visiblePage={visiblePage} setVisible={setVisiblePage} />
+        <BackCoverPage index={4} visiblePage={visiblePage} setVisible={setVisiblePage} />
       </div>
     </div>
   );

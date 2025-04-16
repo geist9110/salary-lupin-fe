@@ -1,6 +1,9 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 
-export function usePageFlip(pageIndex: number, setVisible: () => void) {
+export function usePageFlip(
+  pageIndex: number,
+  setVisible: React.Dispatch<React.SetStateAction<number>>
+) {
   const [rotation, setRotation] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [zIndex, setZIndex] = useState(100 - pageIndex);
@@ -40,16 +43,14 @@ export function usePageFlip(pageIndex: number, setVisible: () => void) {
     setRotation((prev) => {
       const final = prev > 90 ? 180 : 0;
       setZIndex(final === 180 ? 100 + pageIndex : 100 - pageIndex);
-      if (final === 180) {
-        setTimeout(() => {
-          setVisible();
-        }, 0);
-      }
+      setTimeout(() => {
+        setVisible(final === 180 ? pageIndex + 1 : pageIndex - 1);
+      }, 0);
       return final;
     });
     isDragging.current = false;
     setIsAnimating(true);
-  }, [pageIndex]);
+  }, [pageIndex, setVisible]);
 
   useEffect(() => {
     window.addEventListener('pointermove', handlePointerMove);
