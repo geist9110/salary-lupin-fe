@@ -4,7 +4,7 @@ import Page from '@/pages/MagicBook/components/Page.tsx';
 import { PageIndex } from '@/pages/MagicBook/types.ts';
 import EmptyBackground from '@/pages/MagicBook/components/EmptyBackground.tsx';
 
-function AnswerPage({ index, setVisible }: Readonly<PageIndex>) {
+function AnswerPage({ index, visiblePage, setVisible }: Readonly<PageIndex>) {
   // API 연결 후, useState로 값을 변경해야 한다.
   const answer = '아무것도 하지마라.';
 
@@ -13,7 +13,7 @@ function AnswerPage({ index, setVisible }: Readonly<PageIndex>) {
       <EmptyBackground />
       <div className={`${styles.pageForeground} ${common.absoluteFill} ${common.selectNone}`}>
         <h2
-          className={`${common.wrapText} ${common.defaultTextWeight} ${common.flexCenter} ${common.fullSize}`}
+          className={`${common.wrapText} ${common.defaultTextWeight} ${common.flexCenter} ${common.fullSize} ${visiblePage === 2 ? styles.fadeIn : common.hidden}`}
         >
           {answer}
         </h2>
