@@ -4,7 +4,7 @@ export function usePageFlip(
   pageIndex: number,
   setVisible: React.Dispatch<React.SetStateAction<number>>
 ) {
-  const [rotation, setRotation] = useState(0);
+  const [degree, setDegree] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [zIndex, setZIndex] = useState(100 - pageIndex);
   const pageRef = useRef<HTMLDivElement>(null);
@@ -22,7 +22,7 @@ export function usePageFlip(
   }, []);
 
   const handlePointerDown = (e: React.PointerEvent) => {
-    setRotation(getRotation(e.clientX, pageLeftX.current!, pageRightX.current!));
+    setDegree(getDegree(e.clientX, pageLeftX.current!, pageRightX.current!));
     isDragging.current = true;
     setIsAnimating(true);
   };
@@ -31,16 +31,16 @@ export function usePageFlip(
     (e: PointerEvent) => {
       if (!isDragging.current) return;
       setIsAnimating(false);
-      const newRotation = getRotation(e.clientX, pageLeftX.current!, pageRightX.current!);
+      const newRotation = getDegree(e.clientX, pageLeftX.current!, pageRightX.current!);
       setZIndex(newRotation > 90 ? 100 + pageIndex : 100 - pageIndex);
-      setRotation(newRotation);
+      setDegree(newRotation);
     },
     [pageIndex]
   );
 
   const handlePointerUp = useCallback(() => {
     if (!isDragging.current) return;
-    setRotation((prev) => {
+    setDegree((prev) => {
       const final = prev > 90 ? 180 : 0;
       setZIndex(final === 180 ? 100 + pageIndex : 100 - pageIndex);
       setTimeout(() => {
@@ -61,10 +61,10 @@ export function usePageFlip(
     };
   }, [handlePointerMove, handlePointerUp]);
 
-  return { pageRef, degree: rotation, zIndex, handlePointerDown, isAnimating };
+  return { pageRef, degree: degree, zIndex, handlePointerDown, isAnimating };
 }
 
-function getRotation(x: number, leftSide: number, rightSide: number): number {
+function getDegree(x: number, leftSide: number, rightSide: number): number {
   const ratio = (x - leftSide) / (rightSide - leftSide);
   return Math.min(180, Math.max(0, (1 - ratio) * 180));
 }
