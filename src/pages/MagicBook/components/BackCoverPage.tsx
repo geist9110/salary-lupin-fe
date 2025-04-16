@@ -2,7 +2,7 @@ import BookCoverBack from '@/assets/magic-book/book-cover-back.svg';
 import Page from '@/pages/MagicBook/components/Page.tsx';
 import { PageIndex } from '@/pages/MagicBook/types.ts';
 
-function BackCoverPage({ index }: Readonly<PageIndex>) {
+function BackCoverPage({ index, setVisible }: Readonly<PageIndex>) {
   return (
     <Page
       front={
@@ -10,6 +10,7 @@ function BackCoverPage({ index }: Readonly<PageIndex>) {
       }
       back={<img src={BookCoverBack} alt={'book-cover-back'} />}
       page={index}
+      setVisible={setVisible}
     />
   );
 }

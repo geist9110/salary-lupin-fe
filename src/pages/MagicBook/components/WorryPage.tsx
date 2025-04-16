@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { PageIndex } from '@/pages/MagicBook/types.ts';
 import EmptyBackground from '@/pages/MagicBook/components/EmptyBackground.tsx';
 
-function WorryPage({ index }: Readonly<PageIndex>) {
+function WorryPage({ index, setVisible }: Readonly<PageIndex>) {
   const [worryText, setWorryText] = useState('');
   const textMaxLength = 100;
 
@@ -37,7 +37,7 @@ function WorryPage({ index }: Readonly<PageIndex>) {
     </div>
   );
 
-  return <Page front={front} back={back} page={index} />;
+  return <Page front={front} back={back} page={index} setVisible={setVisible} />;
 }
 
 export default WorryPage;
