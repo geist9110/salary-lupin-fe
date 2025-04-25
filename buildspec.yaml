@@ -6,7 +6,6 @@ phases:
       nodejs: 20
     commands:
       - npm install
-      - npm install typescript --save-dev
   build:
     commands:
       - npm run build
