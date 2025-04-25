@@ -5,7 +5,8 @@ phases:
     runtime-versions:
       nodejs: 20
     commands:
-      - npm install
+      - export NODE_ENV=development
+      - npm ci
   build:
     commands:
       - npm run build
