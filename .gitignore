@@ -165,3 +165,7 @@ sketch
 
 # 빌드 산출물
 dist/
+
+# env
+.env.*
+.env
