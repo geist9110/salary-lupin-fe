@@ -3,10 +3,30 @@ import common from '@/pages/MagicBook/common.module.css';
 import Page from '@/pages/MagicBook/components/Page.tsx';
 import { PageIndex } from '@/pages/MagicBook/types.ts';
 import EmptyBackground from '@/pages/MagicBook/components/EmptyBackground.tsx';
+import { useEffect, useState } from 'react';
 
 function AnswerPage({ index, visiblePage, setVisible }: Readonly<PageIndex>) {
-  // API 연결 후, useState로 값을 변경해야 한다.
-  const answer = '아무것도 하지마라.';
+  const [answer, setAnswer] = useState();
+
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
+  useEffect(() => {
+    const fetchAnswer = async () => {
+      try {
+        console.log(API_BASE_URL);
+        const response = await fetch(`${API_BASE_URL}/magic-book/answer`);
+        const data = await response.json();
+        setAnswer(data.data.answer);
+      } catch (e) {
+        console.log('에러!');
+        console.log(e);
+      }
+    };
+
+    if (visiblePage === index) {
+      fetchAnswer();
+    }
+  }, [visiblePage, index]);
 
   const front = (
     <div className={styles.pageContents}>
