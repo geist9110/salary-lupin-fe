@@ -6,10 +6,11 @@
 
 <br>
 
-## ⚙️ 프로젝트 개요
+## ✨ 프로젝트 개요
+
 본 레포지토리는 Salary Lupin 웹 애플리케이션의 프론트엔드를 담당합니다. \
 [백엔드](https://github.com/geist9110/salary-lupin-be)
-와 [인프라](https://github.com/geist9110/salary-lupin-be)는 별도의 저장소에서 관리됩니다.
+와 [인프라](https://github.com/geist9110/salary-lupin-infra)는 별도의 저장소에서 관리됩니다.
 프론트엔드는 인프라 위의 S3와 CloudFront 위에서 동작하며, 백엔드와 HTTP 통신을 통해 데이터를 주고 받습니다.
 
 <details>
@@ -71,6 +72,8 @@
 | 변수명                | 	설명                | 필수 |
 |--------------------|--------------------|----|
 | VITE_API_BASE_URL	 | 백엔드 API 서버의 기본 URL | ✅  |
+
+<br>
 
 ## ⚙️ 프로젝트 빌드 및 실행
 
