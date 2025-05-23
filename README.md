@@ -6,7 +6,7 @@
 
 <br>
 
-⚙️ 프로젝트 개요
+## ⚙️ 프로젝트 개요
 본 레포지토리는 Salary Lupin 웹 애플리케이션의 프론트엔드를 담당합니다. \
 [백엔드](https://github.com/geist9110/salary-lupin-be)
 와 [인프라](https://github.com/geist9110/salary-lupin-be)는 별도의 저장소에서 관리됩니다.
