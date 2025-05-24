@@ -1,0 +1,12 @@
+.header {
+  display: flex;
+  align-items: center;
+  background: var(--color-neutral-102);
+  padding: var(--space-xlarge) var(--layout-padding);
+  height: var(--layout-padding);
+  border-bottom: 1px solid var(--color-neutral-400);
+}
+
+.logo {
+  height: 32px;
+}

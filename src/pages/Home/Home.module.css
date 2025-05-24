@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.heroSection {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+
+  background: var(--color-neutral-102);
+  padding: var(--layout-padding);
+
+}
+
+.subtitle {
+  margin-top: var(--space-xlarge);
+}
+
+.description {
+  margin-top: var(--space-small);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xsmall)
+}
+
+.description > p {
+  color: var(--color-neutral-400);
+}
+
+.cardSection {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  gap: var(--space-large);
+
+  justify-content: flex-start;
+  align-content: flex-start;
+
+  padding: 0 var(--layout-padding) var(--layout-padding);
+  background: var(--color-neutral-102);
+}
